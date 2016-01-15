@@ -24,8 +24,11 @@ module.exports = {
       loaders: [
         {
           test: /\.js$/, 
-          loaders: ['react-hot', 'babel'],
-          include: [path.resolve('src')]
+          loader: "babel-loader",
+          include: [path.resolve('src')],
+          query: {
+            presets: ['es2015', 'stage-0', 'react'],
+          }
         }
       ],
       preLoaders: [
