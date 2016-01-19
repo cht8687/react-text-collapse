@@ -38,7 +38,8 @@
 </big></p>
 
 
-![React hover](src/example/react-text-collapse.gif)
+This project is under construction.
+![React text collapse](src/example/construction.png)
 
 
 ## Installation
