@@ -4,11 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ReactHover = require('./ReactHover');
+var _ReactTextCollapse = require('./ReactTextCollapse');
 
-var _ReactHover2 = _interopRequireDefault(_ReactHover);
+var _ReactTextCollapse2 = _interopRequireDefault(_ReactTextCollapse);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _ReactHover2.default;
+exports.default = _ReactTextCollapse2.default;
 //# sourceMappingURL=index.js.map
