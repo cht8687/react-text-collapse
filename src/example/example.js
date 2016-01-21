@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import ReactTextCollapse from '..';
 
 
-const OPTIONS = {
+const TEXT_COLLAPSE_OPTIONS = {
 	Collapse: false,
   collapseText: '... show more',
   expandText: 'show less'
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <ReactTextCollapse
-        	options={OPTIONS}
+        	options={TEXT_COLLAPSE_OPTIONS}
         > 
         <p>
            React text collapse is awesome. React text collapse is awesome.<br />

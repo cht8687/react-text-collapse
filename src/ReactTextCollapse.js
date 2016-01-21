@@ -4,7 +4,7 @@ import { Motion, spring } from "react-motion";
 export default class ReactTextCollapse extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    options: PropTypes.object.isRequired
+    options: PropTypes.object
   };
 
   constructor(props) {
@@ -12,8 +12,8 @@ export default class ReactTextCollapse extends Component {
 
     const { options: { Collapse } } = this.props;
     this.state = {
-      Collapse: Collapse,
-      height: 100
+      Collapse: Collapse ? Collapse : true,
+      height: 200
     }
   }
 
@@ -26,9 +26,9 @@ export default class ReactTextCollapse extends Component {
     const { options: { collapseText, expandText } } = this.props; 
     const { Collapse } = this.state;
     if (Collapse) {
-      return <div style={{float:'left'}}>{expandText}</div>
-    } else {
       return <div style={{float:'left'}}>{collapseText}</div>
+    } else {
+      return <div style={{float:'left'}}>{expandText}</div>
     }
   }
 
@@ -43,8 +43,8 @@ export default class ReactTextCollapse extends Component {
     const { Collapse, height } = this.state;
     return (
       <Motion
-        defaultStyle={{h: 0}}
-        style={{h: spring(Collapse ? 0 : height)}}>
+        defaultStyle={{h:0}}
+        style={{h: spring(Collapse ? 50 : height)}}>
         {
           ({h}) => (
             <div>
