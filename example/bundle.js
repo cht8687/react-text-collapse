@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "877913f328f88c64e909"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c54bc92c1830e66c6d51"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -579,7 +579,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var OPTIONS = {
+	var TEXT_COLLAPSE_OPTIONS = {
 	  Collapse: false,
 	  collapseText: '... show more',
 	  expandText: 'show less'
@@ -604,7 +604,7 @@
 	        _react2.default.createElement(
 	          _2.default,
 	          {
-	            options: OPTIONS
+	            options: TEXT_COLLAPSE_OPTIONS
 	          },
 	          _react2.default.createElement(
 	            'p',
@@ -20130,8 +20130,8 @@
 	    var Collapse = _this.props.options.Collapse;
 	
 	    _this.state = {
-	      Collapse: Collapse,
-	      height: 100
+	      Collapse: Collapse ? Collapse : true,
+	      height: 200
 	    };
 	    return _this;
 	  }
@@ -20154,13 +20154,13 @@
 	        return _react2.default.createElement(
 	          'div',
 	          { style: { float: 'left' } },
-	          expandText
+	          collapseText
 	        );
 	      } else {
 	        return _react2.default.createElement(
 	          'div',
 	          { style: { float: 'left' } },
-	          collapseText
+	          expandText
 	        );
 	      }
 	    }
@@ -20186,7 +20186,7 @@
 	        _reactMotion.Motion,
 	        {
 	          defaultStyle: { h: 0 },
-	          style: { h: (0, _reactMotion.spring)(Collapse ? 0 : height) } },
+	          style: { h: (0, _reactMotion.spring)(Collapse ? 50 : height) } },
 	        function (_ref) {
 	          var h = _ref.h;
 	          return _react2.default.createElement(
@@ -20218,7 +20218,7 @@
 	
 	ReactTextCollapse.propTypes = {
 	  children: _react.PropTypes.node.isRequired,
-	  options: _react.PropTypes.object.isRequired
+	  options: _react.PropTypes.object
 	};
 	exports.default = ReactTextCollapse;
 
