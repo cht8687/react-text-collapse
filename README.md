@@ -39,7 +39,7 @@
 
 
 This project is under construction.
-![React text collapse](src/example/construction.png)
+![React text collapse](example/construction.png)
 
 
 ## Installation
