@@ -44,7 +44,7 @@ This project is under construction.
 ### Roadmap
 
 - [x] show less is working
-- [x] show more is working (Orbit/Moon)
+- [x] show more is working 
 - [ ] dynamic set height of components (currently it's hardcoded)
 
 
