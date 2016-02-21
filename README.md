@@ -41,6 +41,12 @@
 This project is under construction.
 ![React text collapse](example/construction.png)
 
+### Roadmap
+
+- [x] show less is working
+- [x] show more is working (Orbit/Moon)
+- [ ] dynamic set height of components (currently it's hardcoded)
+
 
 ## Installation
 
