@@ -38,9 +38,6 @@
 </big></p>
 
 
-This project is under construction.
-![React text collapse](example/construction.png)
-
 ### Roadmap
 
 - [x] show less is working
@@ -62,7 +59,7 @@ $ npm install --save react-text-collapse
 
 ## Example code
 
-[Code Example](https://github.com/cht8687/react-text-collapse/blob/master/src/example/Example.js)
+[Code Example](https://github.com/cht8687/react-text-collapse/blob/master/src/example/example.js)
 
 
 ## Usage
