@@ -4,10 +4,11 @@ import ReactTextCollapse from '..';
 
 
 const TEXT_COLLAPSE_OPTIONS = {
-	Collapse: false,
+	collapse: false,
   collapseText: '... show more',
   expandText: 'show less',
-  minHeight: 100
+  minHeight: 100,
+  maxHeight: 250
 }
 
 class App extends Component {

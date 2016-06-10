@@ -38,13 +38,6 @@
 </big></p>
 
 
-### Roadmap
-
-- [x] show less is working
-- [x] show more is working 
-- [ ] dynamic set height of components (currently it's hardcoded)
-
-
 ## Installation
 
 ### npm
@@ -64,6 +57,32 @@ $ npm install --save react-text-collapse
 
 ## Usage
 
+
+```js
+<ReactTextCollapse
+  options = {TEXT_COLLAPSE_OPTIONS}> 
+  <p>
+     React text collapse is awesome. React text collapse is awesome.<br />
+     React text collapse is awesome. React text collapse is awesome.<br />
+     React text collapse is awesome. React text collapse is awesome.<br />
+     React text collapse is awesome. React text collapse is awesome.<br />
+  </p>
+</ReactTextCollapse> 
+```
+
+## Options
+
+#### `options`: PropTypes.object.isRequired
+
+```js
+const TEXT_COLLAPSE_OPTIONS = {
+  collapse: false, // default state when component rendered
+  collapseText: '... show more', // text to show when collapsed
+  expandText: 'show less', // text to show when expanded
+  minHeight: 100, // component height when closed
+  maxHeight: 250 // expanded to
+}
+```
 
 
 ## Development

@@ -4,28 +4,22 @@ import { Motion, spring } from "react-motion";
 export default class ReactTextCollapse extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    options: PropTypes.object
+    options: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
 
-    const { options: { Collapse } } = this.props;
+    const { options: { collapse } } = this.props;
     this.state = {
-      Collapse: Collapse ? Collapse : true,
-      height: 400
+      collapse: collapse ? collapse : true
     }
-  }
-
-  componentDidMount() {
-    //const height = ReactDOM.findDOMNode(this).offsetHeight;
-    //this.setState({height: height});
   }
 
   renderHelperText() {
     const { options: { collapseText, expandText } } = this.props; 
-    const { Collapse } = this.state;
-    if (Collapse) {
+    const { collapse } = this.state;
+    if (collapse) {
       return <div style={{float:'left'}}>{collapseText}</div>
     } else {
       return <div style={{float:'left'}}>{expandText}</div>
@@ -33,19 +27,19 @@ export default class ReactTextCollapse extends Component {
   }
 
   toggleAction() {
-    let { Collapse } = this.state;
-    Collapse = !Collapse;
-    this.setState({ Collapse});
+    let { collapse } = this.state;
+    collapse = !collapse;
+    this.setState({ collapse});
   }
 
   render() {
     const { children } = this.props;
-    const { minHeight } = this.props.options;
-    const { Collapse, height } = this.state;
+    const { minHeight, maxHeight } = this.props.options;
+    const { collapse } = this.state;
     return (
       <Motion
         defaultStyle={{h:0}}
-        style={{h: spring(Collapse ? minHeight : height)}}>
+        style={{h: spring(collapse ? minHeight : maxHeight)}}>
         {
           ({h}) => (
             <div>
