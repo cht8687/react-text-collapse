@@ -5,7 +5,7 @@ var shell = require('gulp-shell');
 var gulptil = require('gulp-util');
 
 // Variables
-var version = '0.0.2';
+var version = '0.0.3';
 var gitCommit = `git commit -m ${version}`;
 var gitTag = `git tag v${version}`;
 

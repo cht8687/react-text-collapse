@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c54bc92c1830e66c6d51"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e9326fbc640f0e1577c9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -580,9 +580,11 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var TEXT_COLLAPSE_OPTIONS = {
-	  Collapse: false,
+	  collapse: false,
 	  collapseText: '... show more',
-	  expandText: 'show less'
+	  expandText: 'show less',
+	  minHeight: 100,
+	  maxHeight: 250
 	};
 	
 	var App = function (_Component) {
@@ -20127,30 +20129,23 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ReactTextCollapse).call(this, props));
 	
-	    var Collapse = _this.props.options.Collapse;
+	    var collapse = _this.props.options.collapse;
 	
 	    _this.state = {
-	      Collapse: Collapse ? Collapse : true,
-	      height: 200
+	      collapse: collapse ? collapse : true
 	    };
 	    return _this;
 	  }
 	
 	  _createClass(ReactTextCollapse, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      //const height = ReactDOM.findDOMNode(this).offsetHeight;
-	      //this.setState({height: height});
-	    }
-	  }, {
 	    key: 'renderHelperText',
 	    value: function renderHelperText() {
 	      var _props$options = this.props.options;
 	      var collapseText = _props$options.collapseText;
 	      var expandText = _props$options.expandText;
-	      var Collapse = this.state.Collapse;
+	      var collapse = this.state.collapse;
 	
-	      if (Collapse) {
+	      if (collapse) {
 	        return _react2.default.createElement(
 	          'div',
 	          { style: { float: 'left' } },
@@ -20167,10 +20162,10 @@
 	  }, {
 	    key: 'toggleAction',
 	    value: function toggleAction() {
-	      var Collapse = this.state.Collapse;
+	      var collapse = this.state.collapse;
 	
-	      Collapse = !Collapse;
-	      this.setState({ Collapse: Collapse });
+	      collapse = !collapse;
+	      this.setState({ collapse: collapse });
 	    }
 	  }, {
 	    key: 'render',
@@ -20178,15 +20173,16 @@
 	      var _this2 = this;
 	
 	      var children = this.props.children;
-	      var _state = this.state;
-	      var Collapse = _state.Collapse;
-	      var height = _state.height;
+	      var _props$options2 = this.props.options;
+	      var minHeight = _props$options2.minHeight;
+	      var maxHeight = _props$options2.maxHeight;
+	      var collapse = this.state.collapse;
 	
 	      return _react2.default.createElement(
 	        _reactMotion.Motion,
 	        {
 	          defaultStyle: { h: 0 },
-	          style: { h: (0, _reactMotion.spring)(Collapse ? 50 : height) } },
+	          style: { h: (0, _reactMotion.spring)(collapse ? minHeight : maxHeight) } },
 	        function (_ref) {
 	          var h = _ref.h;
 	          return _react2.default.createElement(
@@ -20218,7 +20214,7 @@
 	
 	ReactTextCollapse.propTypes = {
 	  children: _react.PropTypes.node.isRequired,
-	  options: _react.PropTypes.object
+	  options: _react.PropTypes.object.isRequired
 	};
 	exports.default = ReactTextCollapse;
 
