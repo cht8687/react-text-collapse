@@ -24,7 +24,10 @@
     "component",
     "react-text",
     "react-text-collapse",
-    "react-text-expand"
+    "react-text-expand",
+    "text",
+    "accordion",
+    "expand"
   ],
   "files": [
     "dist"
