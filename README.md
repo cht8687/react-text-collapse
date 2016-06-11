@@ -40,6 +40,8 @@
 
 ## Installation
 
+[![Join the chat at https://gitter.im/cht8687/react-text-collapse](https://badges.gitter.im/cht8687/react-text-collapse.svg)](https://gitter.im/cht8687/react-text-collapse?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### npm
 
 ```
