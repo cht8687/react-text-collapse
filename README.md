@@ -1,5 +1,3 @@
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cht8687/help)
-
 <big><h1 align="center">React text collapse</h1></big>
 
 <p align="center">
