@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e9326fbc640f0e1577c9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b9ad9ad86b2d59974020"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -583,8 +583,8 @@
 	  collapse: false,
 	  collapseText: '... show more',
 	  expandText: 'show less',
-	  minHeight: 100,
-	  maxHeight: 250
+	  minHeight: 70,
+	  maxHeight: 180
 	};
 	
 	var App = function (_Component) {
