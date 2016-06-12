@@ -7,8 +7,8 @@ const TEXT_COLLAPSE_OPTIONS = {
 	collapse: false,
   collapseText: '... show more',
   expandText: 'show less',
-  minHeight: 100,
-  maxHeight: 250
+  minHeight: 70,
+  maxHeight: 180
 }
 
 class App extends Component {
