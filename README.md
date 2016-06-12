@@ -38,6 +38,10 @@
 
 ![React text collapse](react-text-collapse.gif)
 
+## Philosophy
+
+>Keep things simple! You don't need jQuery...  
+
 
 ## Installation
 
