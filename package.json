@@ -1,7 +1,7 @@
 {
   "name": "react-text-collapse",
-  "version": "0.0.5",
-  "description": "",
+  "version": "0.1.0",
+  "description": "React text collapse expand tool",
   "main": "dist/index.js",
   "scripts": {
     "lint": "standard src/**/*.js | snazzy",
