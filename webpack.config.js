@@ -10,44 +10,41 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server'
   ],
-    output: {filename: 'bundle.js', path: path.resolve('example')},
-    plugins: [
-      new HtmlWebpackPlugin(),
-      new webpack.DefinePlugin({
-        'process.env': {
-         NODE_ENV: '"' + env + '"'
-        }
-      }),
-      new webpack.HotModuleReplacementPlugin()
-    ],
-    module: {
-      loaders: [
-        {
-          test: /\.js$/, 
-          loader: "babel-loader",
-          include: [path.resolve('src')],
-          query: {
-            presets: ['es2015', 'stage-0', 'react'],
-          }
-        }
-      ],
-      preLoaders: [
-        {
-          test: /\.js$/, 
-          loaders: ['eslint-loader'], 
-          include: [path.resolve('src')]
-        }
-      ]   
-    },
-    resolve: { extensions: ['', '.js'] },
-    stats: { colors: true },
-    eslint: { configFile: 'src/.eslintrc' },
-    devServer: {
-      hot: true,
-      historyApiFallback: true,
-      stats: {
-        chunkModules: false,
-        colors: true
+  output: { filename: 'bundle.js', path: path.resolve('example') },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"' + env + '"'
       }
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        include: [path.resolve('src')]
+      }
+    ],
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loaders: ['eslint-loader'],
+        include: [path.resolve('src')]
+      }
+    ]
+  },
+  resolve: { extensions: ['', '.js'] },
+  stats: { colors: true },
+  eslint: { configFile: 'src/.eslintrc' },
+  devServer: {
+    hot: true,
+    historyApiFallback: true,
+    stats: {
+      chunkModules: false,
+      colors: true
     }
+  }
 };
