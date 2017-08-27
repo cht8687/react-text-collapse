@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Motion, spring } from "react-motion";
+import PropTypes from 'prop-types';
 
 export default class ReactTextCollapse extends Component {
   static propTypes = {
@@ -17,19 +18,19 @@ export default class ReactTextCollapse extends Component {
   }
 
   renderHelperText() {
-    const { options: { collapseText, expandText } } = this.props; 
+    const { options: { collapseText, expandText } } = this.props;
     const { collapse } = this.state;
     if (collapse) {
-      return <div style={{float:'left'}}>{collapseText}</div>
+      return <div style={{ float: 'left' }}>{collapseText}</div>
     } else {
-      return <div style={{float:'left'}}>{expandText}</div>
+      return <div style={{ float: 'left' }}>{expandText}</div>
     }
   }
 
   toggleAction() {
     let { collapse } = this.state;
     collapse = !collapse;
-    this.setState({ collapse});
+    this.setState({ collapse });
   }
 
   render() {
@@ -38,17 +39,17 @@ export default class ReactTextCollapse extends Component {
     const { collapse } = this.state;
     return (
       <Motion
-        defaultStyle={{h:0}}
-        style={{h: spring(collapse ? minHeight : maxHeight)}}>
+        defaultStyle={{ h: 0 }}
+        style={{ h: spring(collapse ? minHeight : maxHeight) }}>
         {
-          ({h}) => (
+          ({ h }) => (
             <div>
-              <div 
-                  style={{
-                    display: `block`,
-                    overflow: `hidden`,
-                    height: `${h}`
-                  }}>
+              <div
+                style={{
+                  display: `block`,
+                  overflow: `hidden`,
+                  height: `${h}`
+                }}>
                 {children}
               </div>
               <div onClick={this.toggleAction.bind(this)}>{this.renderHelperText()}</div>
