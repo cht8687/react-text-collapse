@@ -1,6 +1,6 @@
 {
   "name": "react-text-collapse",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "description": "React text collapse expand tool",
   "main": "dist/index.js",
   "scripts": {
@@ -62,6 +62,7 @@
     "parallelshell": "^2.0.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-motion": "^0.4.3",
     "react-hot-loader": "^1.2.9",
     "rimraf": "^2.4.3",
     "snazzy": "^4.0.0",
