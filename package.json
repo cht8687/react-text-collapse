@@ -1,6 +1,6 @@
 {
   "name": "react-text-collapse",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React text collapse expand tool",
   "main": "dist/index.js",
   "scripts": {
@@ -72,6 +72,10 @@
     "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
-    "prop-types": "^15.5.10"
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3",
+    "gulp-util": "^3.0.8",
+    "prop-types": "^15.5.10",
+    "run-sequence": "^2.1.0"
   }
 }
