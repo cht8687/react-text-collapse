@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "standard src/**/*.js | snazzy",
-    "prepublish": "parallelshell -w \"npm run build:dist -s\" \"npm run build:example -s\" \"npm run build:bower -s\"",
+    "prepublish": "parallelshell -w \"npm run build:dist -s\" \"npm run build:example -s\"",
     "prebuild": "rimraf dist example build",
     "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
     "build:example": "webpack --config webpack.config.js",
@@ -73,10 +73,6 @@
     "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-shell": "^0.6.3",
-    "gulp-util": "^3.0.8",
-    "prop-types": "^15.5.10",
-    "run-sequence": "^2.1.0"
+    "prop-types": "^15.5.10"
   }
 }
