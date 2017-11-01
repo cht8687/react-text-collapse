@@ -6,7 +6,7 @@ var env = process.env.NODE_ENV || 'development';
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/example/Example.js',
+    './src/example/example.js',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server'
   ],
@@ -38,7 +38,7 @@ module.exports = {
   },
   resolve: { extensions: ['', '.js'] },
   stats: { colors: true },
-  eslint: { configFile: 'src/.eslintrc' },
+  eslint: { configFile: '.eslintrc' },
   devServer: {
     hot: true,
     historyApiFallback: true,
