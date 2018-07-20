@@ -35,13 +35,11 @@
 
 </big></p>
 
-
 ![React text collapse](react-text-collapse.gif)
 
 ## Philosophy
 
->Keep things simple! You don't need jQuery...  
-
+> Keep things simple! You don't need jQuery...
 
 ## Installation
 
@@ -61,20 +59,17 @@ $ npm install --save react-text-collapse
 
 [Code Example](https://github.com/cht8687/react-text-collapse/blob/master/src/example/example.js)
 
-
 ## Usage
 
-
 ```js
-<ReactTextCollapse
-  options = {TEXT_COLLAPSE_OPTIONS}> 
+<ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}>
   <p>
-     React text collapse is awesome. React text collapse is awesome.<br />
-     React text collapse is awesome. React text collapse is awesome.<br />
-     React text collapse is awesome. React text collapse is awesome.<br />
-     React text collapse is awesome. React text collapse is awesome.<br />
+    React text collapse is awesome. React text collapse is awesome.<br />
+    React text collapse is awesome. React text collapse is awesome.<br />
+    React text collapse is awesome. React text collapse is awesome.<br />
+    React text collapse is awesome. React text collapse is awesome.<br />
   </p>
-</ReactTextCollapse> 
+</ReactTextCollapse>
 ```
 
 ## Options
@@ -88,9 +83,12 @@ const TEXT_COLLAPSE_OPTIONS = {
   expandText: 'show less', // text to show when expanded
   minHeight: 100, // component height when closed
   maxHeight: 250 // expanded to
+  textStyle: { // pass the css for the collapseText and expandText here
+    color: "blue",
+    fontSize: "20px"
+  }
 }
 ```
-
 
 ## Development
 

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { render } from 'react-dom'
+import React, {Component} from 'react'
+import {render} from 'react-dom'
 import ReactTextCollapse from '..'
 
 const TEXT_COLLAPSE_OPTIONS = {
@@ -7,17 +7,18 @@ const TEXT_COLLAPSE_OPTIONS = {
   collapseText: '... show more',
   expandText: 'show less',
   minHeight: 70,
-  maxHeight: 180
+  maxHeight: 180,
+  textStyle: {
+    color: 'blue',
+    fontSize: '20px'
+  }
 }
 
 class App extends Component {
-
   render () {
     return (
       <div>
-        <ReactTextCollapse
-          options={TEXT_COLLAPSE_OPTIONS}
-        >
+        <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}>
           <p>
             React text collapse is awesome. React text collapse is awesome.<br />
             React text collapse is awesome. React text collapse is awesome.<br />
