@@ -1,6 +1,6 @@
 {
   "name": "react-text-collapse",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "React text collapse expand tool",
   "main": "dist/index.js",
   "scripts": {
