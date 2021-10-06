@@ -4,7 +4,7 @@
   "description": "React text collapse expand tool",
   "main": "dist/index.js",
   "scripts": {
-    "lint": "standard src/**/*.js | snazzy",
+    "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 8080",
     "prepublish": "npm run build:dist -s && npm run build:example -s",
     "prebuild": "rimraf dist example build",
     "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
@@ -44,35 +44,51 @@
     "react-motion": "^0.4 || ^0.5"
   },
   "devDependencies": {
-    "babel-cli": "^6.8.0",
-    "babel-core": "^6.8.0",
-    "babel-eslint": "^6.0.4",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-react-transform": "^2.0.0-beta1",
-    "babel-plugin-transform-object-rest-spread": "^6.3.13",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.1.2",
-    "coveralls": "^2.11.6",
-    "eslint": "^2.9.0",
-    "eslint-loader": "^1.0.0",
-    "eslint-plugin-react": "^5.0.1",
-    "html-webpack-plugin": "^2.16.1",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-css-modules-transform": "^1.2.7",
+    "coveralls": "^3.0.2",
+    "css-loader": "^3.2.0",
+    "eslint": "^5.6.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
     "isparta": "^4.0.0",
-    "react": "^15.0.2",
-    "react-dom": "^15.0.2",
+    "mini-css-extract-plugin": "^0.4.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-code-blocks": "0.0.9-0",
+    "react-dom": "^16.13.1",
     "react-hot-loader": "^1.2.9",
     "react-motion": "^0.5.0",
     "rimraf": "^2.4.3",
-    "snazzy": "^4.0.0",
+    "snazzy": "^8.0.0",
     "standard": "^7.1.2",
     "tap-nyan": "0.0.2",
     "tape": "^4.4.0",
-    "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.16.5"
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "prop-types": "^15.5.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

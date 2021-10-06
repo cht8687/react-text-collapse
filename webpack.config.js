@@ -1,50 +1,71 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
-var env = process.env.NODE_ENV || 'development';
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var path = require('path')
+var env = process.env.NODE_ENV || 'development'
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/example/example.js',
+    './src/example/Example.js',
     'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server'
+    'webpack/hot/only-dev-server',
   ],
   output: { filename: 'bundle.js', path: path.resolve('example') },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'React-text-collapse',
+    }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"' + env + '"'
-      }
+        NODE_ENV: '"' + env + '"',
+      },
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
-        include: [path.resolve('src')]
-      }
-    ],
-    preLoaders: [
+        loaders: ['babel-loader'],
+        include: [path.resolve('src')],
+      },
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              publicPath: '../',
+            },
+          },
+          'css-loader',
+        ],
+      },
+      {
+        enforce: 'pre',
         test: /\.js$/,
         loaders: ['eslint-loader'],
-        include: [path.resolve('src')]
-      }
-    ]
+        include: [path.resolve('src')],
+      },
+    ],
   },
-  resolve: { extensions: ['', '.js'] },
+  resolve: { extensions: ['.js'] },
   stats: { colors: true },
-  eslint: { configFile: '.eslintrc' },
   devServer: {
     hot: true,
     historyApiFallback: true,
     stats: {
       chunkModules: false,
-      colors: true
-    }
-  }
-};
+      colors: true,
+    },
+  },
+}

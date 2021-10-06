@@ -5,23 +5,23 @@ import PropTypes from 'prop-types'
 export default class ReactTextCollapse extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    options: PropTypes.object.isRequired
+    options: PropTypes.object.isRequired,
   }
 
   constructor(props) {
     super(props)
 
     const {
-      options: { collapse }
+      options: { collapse },
     } = this.props
     this.state = {
-      collapse: collapse ? collapse : true
+      collapse: collapse ? collapse : true,
     }
   }
 
   renderHelperText() {
     const {
-      options: { collapseText, expandText, textStyle }
+      options: { collapseText, expandText, textStyle },
     } = this.props
     const { collapse } = this.state
 
@@ -39,7 +39,7 @@ export default class ReactTextCollapse extends Component {
   render() {
     const {
       options: { minHeight, maxHeight },
-      children
+      children,
     } = this.props
     const { collapse } = this.state
     return (
@@ -48,18 +48,18 @@ export default class ReactTextCollapse extends Component {
         style={{ h: spring(collapse ? minHeight : maxHeight) }}
       >
         {({ h }) => (
-          <div>
+          <span>
             <div
               style={{
                 display: `block`,
-                overflow: (collapse ? `hidden` : `auto`),
-                height: `${h}` + 'px'
+                overflow: collapse ? `hidden` : `auto`,
+                height: `${h}` + 'px',
               }}
             >
               {children}
             </div>
             <div onClick={this.toggleAction}>{this.renderHelperText()}</div>
-          </div>
+          </span>
         )}
       </Motion>
     )

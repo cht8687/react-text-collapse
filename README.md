@@ -20,11 +20,6 @@
          alt="Downloads">
   </a>
 
-  <a href="https://david-dm.org/cht8687/react-text-collapse.svg">
-    <img src="https://david-dm.org/cht8687/react-text-collapse.svg?style=flat-square"
-         alt="Dependency Status">
-  </a>
-
   <a href="https://github.com/cht8687/react-text-collapse/blob/master/LICENSE">
     <img src="https://img.shields.io/npm/l/react-text-collapse.svg?style=flat-square"
          alt="License">
@@ -64,10 +59,14 @@ $ npm install --save react-text-collapse
 ```js
 <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS}>
   <p>
-    React text collapse is awesome. React text collapse is awesome.<br />
-    React text collapse is awesome. React text collapse is awesome.<br />
-    React text collapse is awesome. React text collapse is awesome.<br />
-    React text collapse is awesome. React text collapse is awesome.<br />
+    React text collapse is awesome. React text collapse is awesome.
+    <br />
+    React text collapse is awesome. React text collapse is awesome.
+    <br />
+    React text collapse is awesome. React text collapse is awesome.
+    <br />
+    React text collapse is awesome. React text collapse is awesome.
+    <br />
   </p>
 </ReactTextCollapse>
 ```
@@ -109,4 +108,11 @@ open http://localhost:8080/webpack-dev-server/
 
 MIT
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+## Contributors
+
+Thanks to these wonderful developers for helping this project:
+
+<p float="left">
+    <a href="https://github.com/arojunior"><img src="https://avatars.githubusercontent.com/u/7604033?v=4" width="50" height="50" /></a>
+    <a href="https://github.com/validalias"><img src="https://avatars.githubusercontent.com/u/44221844?v=4" width="50" height="50" /></a>
+</p>
